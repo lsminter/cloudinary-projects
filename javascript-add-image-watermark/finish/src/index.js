@@ -19,6 +19,7 @@ const myImage = cld.image('cld-sample-5');
 
 myImage
   .resize(fill(300, 300))
+  .format('auto')
   .overlay(
     source(
       image('samples/cloudinary-icon')
@@ -28,12 +29,13 @@ myImage
     )
       .position(new Position().gravity(compass('south_east')))
   )
-  .format('png')
+
 
 const mySecondImage = cld.image('cld-sample')
 
 mySecondImage
   .resize(fill(300, 300))
+  .format('auto')
   .overlay(
     source(
       text('PREVIEW', new TextStyle('arial', 60)
@@ -42,7 +44,7 @@ mySecondImage
         .transformation(new Transformation().adjust(opacity(70)))
     )
   )
-  .format('png')
+
 
 
 const imgElement = document.createElement('img');

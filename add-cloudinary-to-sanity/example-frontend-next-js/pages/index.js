@@ -12,21 +12,23 @@ const query = groq`*[_type == "post"] {
 `;
 
 const Posts = ({ post }) => {
-  console.log(post)
-  console.log({query: query})
   return (
     <div>
       {post.map(post => (
         <div key={post.title}>
-          <h3>
+          <h2>
             {post.title}
-          </h3>
+          </h2>
+          <div>
+          <h3>Cloudinary image</h3>
           <img 
             src={post.image.url} 
             alt="image"
             height="200px"
           />
+          </div>
           <div>
+          <h3>Cloudinary Video</h3>
             <ReactPlayer
               height="200px"
               width="400px"
